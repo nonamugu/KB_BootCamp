@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- {{message}}는 Vue의 템플릿 구문입니다. Vue 인스턴스의 data 속성에 정의된 message 값을 출력합니다. -->
+      <h2>{{message}}</h2>
+    </div>
+    <!-- Vue.js 라이브러리를 CDN에서 불러옵니다. -->
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = {
+        message: 'Hello Vue3!',
+      };
+      let vm = Vue.createApp({
+        name: 'app',
+        data() {
+          return model;
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
