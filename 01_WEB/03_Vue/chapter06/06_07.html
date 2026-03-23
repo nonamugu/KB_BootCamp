@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+    <style>
+      .buttonColor {
+        background-color: aqua;
+        color: black;
+      }
+      .buttonLayout {
+        text-align: center;
+        width: 120px;
+      }
+      .staticBorder {
+        border: 1px dashed khaki;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="checkbox" v-model="isMyLayout" />
+      레이아웃 적용 여부 <br />
+      <button
+        class="staticBorder"
+        :class="[myColor, isMyLayout ? myLayout : '']"
+      >
+        테스트 버튼
+      </button>
+      <script src="https://unpkg.com/vue"></script>
+      <script>
+        let vm = Vue.createApp({
+          name: 'App',
+          data() {
+            return {
+              myColor: 'buttonColor',
+              myLayout: 'buttonLayout',
+              isMyLayout: false,
+            };
+          },
+        }).mount('#app');
+      </script>
+    </div>
+  </body>
+</html>
