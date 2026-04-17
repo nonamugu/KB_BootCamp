@@ -9,7 +9,7 @@ public class Car {
     }
 
     public void setSpeed(int speed) {
-        if(speed < 0) {
+        if(speed <= 0) {
             this.speed = 0;
             return;
         }
@@ -24,6 +24,14 @@ public class Car {
         if(stop) {
             this.speed = 0;
         }
+        this.stop = stop;
+    }
+
+    public Car() {
+    }
+
+    public Car(int speed, boolean stop) {
+        this.speed = speed;
         this.stop = stop;
     }
 }
